@@ -1,0 +1,6 @@
+framework module Pods_PHBStackLayout_Tests {
+  umbrella header "Pods-PHBStackLayout_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

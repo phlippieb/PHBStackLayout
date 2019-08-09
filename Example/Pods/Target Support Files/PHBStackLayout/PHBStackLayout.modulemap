@@ -1,0 +1,6 @@
+framework module PHBStackLayout {
+  umbrella header "PHBStackLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}
