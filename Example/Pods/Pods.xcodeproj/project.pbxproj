@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0AC2541D22FDFC96008326A3 /* NonInteractableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2541C22FDFC96008326A3 /* NonInteractableViews.swift */; };
+		0AC2541F22FDFD28008326A3 /* StackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC2541E22FDFD28008326A3 /* StackLayout.swift */; };
 		0E9CF225E3A60589ABCDFC8869E96090 /* Pods-PHBStackLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 593BC7FF1113ECF5950CCDA2A09ACB91 /* Pods-PHBStackLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1014336FFA3DBAB8217B29F4AC616CE6 /* PHBStackLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0664CFC581628D7C3AED6DAF8F466EE1 /* PHBStackLayout-dummy.m */; };
 		35E0D6C081DCC2C457B2A8B4F416614C /* Pods-PHBStackLayout_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39157DE56D562D267607243BA1AE76B5 /* Pods-PHBStackLayout_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0664CFC581628D7C3AED6DAF8F466EE1 /* PHBStackLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PHBStackLayout-dummy.m"; sourceTree = "<group>"; };
 		0AC2541C22FDFC96008326A3 /* NonInteractableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonInteractableViews.swift; sourceTree = "<group>"; };
+		0AC2541E22FDFD28008326A3 /* StackLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackLayout.swift; sourceTree = "<group>"; };
 		127B480A493AECD07A64AE3CA7CF4E37 /* Pods-PHBStackLayout_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PHBStackLayout_Example-Info.plist"; sourceTree = "<group>"; };
 		16D03F220B28CF7AA6FC7C1883C0B48A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2B8F95B5AFB00AF841FE88050B59F77C /* Pods-PHBStackLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PHBStackLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC2541C22FDFC96008326A3 /* NonInteractableViews.swift */,
+				0AC2541E22FDFD28008326A3 /* StackLayout.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC2541F22FDFD28008326A3 /* StackLayout.swift in Sources */,
 				0AC2541D22FDFC96008326A3 /* NonInteractableViews.swift in Sources */,
 				1014336FFA3DBAB8217B29F4AC616CE6 /* PHBStackLayout-dummy.m in Sources */,
 			);
