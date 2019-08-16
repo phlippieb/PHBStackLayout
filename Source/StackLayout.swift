@@ -8,32 +8,32 @@
 /// This type provides methods for creating a UIStackView-based layout of views.
 /// The layout is built up as a tree, starting from a root node, where each node can branch out to more nodes, or contain a view.
 /// Each node has an associated view, which is used to build up the concrete layout.
-struct StackLayout {
+public struct StackLayout {
     
     // Layout elements/nodes each have a view.
     // The view can be read by clients to add the layout to a UI,
     // and is set when creating a layout element, using one of the factory methods (see below -- view, spacing, rows, cols).
     
-    let view: UIView
+    public let view: UIView
     
     private init(_ view: UIView) { self.view = view }
     
     // Layout element factory methods -- use these!
     
     /// A layout element for a view.
-    static func view(_ view: UIView) -> StackLayout {
+    public static func view(_ view: UIView) -> StackLayout {
         return .init(view)
     }
     
     /// A layout element for spacing in the given direction.
-    static func spacing(of amount: CGFloat, direction: Axis) -> StackLayout {
+    public static func spacing(of amount: CGFloat, direction: Axis) -> StackLayout {
         let view = spacingView(spacingAmount: amount, direction: direction)
         return .init(view)
     }
     
     /// A convenience element for adding spacing around the child layout on either side.
     /// (Creates a stack layout under the hood.)
-    static func inset(by amount: CGFloat, direction: Axis, of layout: StackLayout) -> StackLayout {
+    public static func inset(by amount: CGFloat, direction: Axis, of layout: StackLayout) -> StackLayout {
         let view = stackView(
             axis: direction,
             alignment: .fill,
@@ -47,28 +47,28 @@ struct StackLayout {
     
     /// A layout element for rows of sub-elements.
     /// - Parameter alignment: The vertical alignment of elements.
-    static func rows(alignment: Alignment = .center, of layouts: [StackLayout]) -> StackLayout {
+    public static func rows(alignment: Alignment = .center, of layouts: [StackLayout]) -> StackLayout {
         let view = stackView(axis: .vertical, alignment: alignment, layouts: layouts)
         return .init(view)
     }
     
     /// A layout element for columns of sub-elements.
     /// - Parameter alignment: The horizontal alignment of elements.
-    static func cols(alignment: Alignment = .center, of layouts: [StackLayout]) -> StackLayout {
+    public static func cols(alignment: Alignment = .center, of layouts: [StackLayout]) -> StackLayout {
         let view = stackView(axis: .horizontal, alignment: alignment, layouts: layouts)
         return .init(view)
     }
     
     // Configuration types
     
-    typealias Axis = NSLayoutConstraint.Axis
+    public typealias Axis = NSLayoutConstraint.Axis
     
-    enum Alignment {
+    public enum Alignment {
         case leading, center, trailing, fill
-        static let left: Alignment = .leading
-        static let right: Alignment = .trailing
-        static let top: Alignment = .leading
-        static let bottom: Alignment = .trailing
+        public static let left: Alignment = .leading
+        public static let right: Alignment = .trailing
+        public static let top: Alignment = .leading
+        public static let bottom: Alignment = .trailing
         
         fileprivate var forStackView: UIStackView.Alignment {
             switch self {
@@ -84,7 +84,7 @@ struct StackLayout {
 // Convenience method for installing a layout to a view.
 
 extension StackLayout {
-    func install(in view: UIView, with insets: UIEdgeInsets = .zero) {
+    public func install(in view: UIView) {
         view.addSubview(self.view)
         self.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
