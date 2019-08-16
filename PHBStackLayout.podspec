@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PHBStackLayout'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A declarative layout μFramework built on UIStackView'
   s.description      = <<-DESC
 UIStackView allows developers to build auto-layout UIs without needing to set up constraints -- a powerful way of building layouts, which unfortunately requires a certain amount of boilerplate code. This framework exposes the convenience of that approach, but reduces the required boilerplate by wrapping it in a declarative syntax.
