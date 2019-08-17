@@ -148,6 +148,27 @@ let layout = StackLayout.inset(
 The `inset` method is actually a convenience method to create a stack view containing three views: the view of the given child node in the middle, and two spacer views around it.
 As such, under the hood, it creates a `rows` or `cols` node with a `spacing`, `view`, and another `spacing` node as its child nodes.
 
+## Some technical considerations
+
+### isUserInteractionEnabled vs hitTest
+
+Some real-world situations have tricky requirements in terms of interaction.
+
+For example, consider a card-like cell. 
+When a user taps on the card, the app should navigate somewhere.
+The card has some subviews (images, labels, etc) that should not interfere with the interactability of the card on the whole.
+But the card also has a button at the bottom which, when tapped, should dismiss the card.
+
+In this a case, it is tempting but dangerous to set `isUserInteractionEnabled` on the container views (such as the stack view used to do the layout).
+It might seem like that would make all the card's subviews non-interactable by default and prevent the subviews from intercepting taps that should go to the card.
+But in actual fact, the subviews would not just become non-interactable *by default*; there would be no way to make the button interactable.
+
+The actual solution is to subclass the container view and override `hitTest` to pass the interactions through to the parent class.
+
+Therefore, in this framework's implementation, the nodes don't actually use `UIView` for spacing, nor `UIStackView` for the stacks. 
+Instead, custom non-interactable subclasses of those classes are used.
+See `NonInteractableViews.swift`.
+
 ## Installation
 
 ### Cocoapods
