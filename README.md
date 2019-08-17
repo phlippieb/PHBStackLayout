@@ -50,6 +50,41 @@ SwiftUI is Apple's shiny new declarative UI paradigm. By all accounts, it's goin
 
 ## Usage
 
+### Example
+
+Before diving into the details, let's take a look at an example.
+
+Given some subviews (an image view, a heading label, and a subheading label), consider the following layout code in a UITableViewCell subclass: 
+
+```
+override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+   super.init(style: style, reuseIdentifier: reuseIdentifier)
+   
+   let layout = StackLayout.inset(by: 8, direction: .vertical, of:
+      .inset(by: 9, direction: .horizontal, of:
+         .cols(alignment: .center, of: [
+            .view(self.imageView),
+            .spacing(of: 12: direction: .horizontal),
+            .rows(alignment: .left, of: [
+               .view(self.headingLabel),
+               .spacing(of: 4, direction: .vertical),
+               .view(self.subheadingLabel) ])])))
+
+   layout.install(in: self.contentView)
+}
+```
+
+This creates and installs a layout where:
+
+- All content is inset by 8 points from the top and bottom, and by 9 from the left and right
+- The image view is at the left, centered vertically
+- The heading label is to the right of the image view, offset by 12 points, at the top of the cell
+- The subheading label is 4 points below the heading label, also offset by 12 points from the image view, at the bottom of the cell 
+
+Note how the layout is structured as a tree, and how the level of sub-layouts is indicated by indentation in the code.
+
+### The StackLayout tree
+
 A stack layout is a tree, where each node of the tree is a `StackLayout` object.
 
 The `StackLayout` struct provides 5 static methods to create such nodes:
@@ -67,6 +102,8 @@ Ultimately, each node is associated with a `UIView`.
 For parent nodes, that view contains the sub-views that are associated with its child nodes.
 For leaf nodes, that view has no sub-views.
 Any node in a layout tree can be installed in a view (such as the root view of a view controller) by accessing its view.
+
+### Layout nodes
 
 The types of nodes are:
 
@@ -95,7 +132,7 @@ let layout = StackLayout.rows(of: [
 ])
 ```
 
-Under the hood, the `rows` method creates a UIStackView, configures its axis and alignment, and then adds the associated view of each of the given child nodes as an arranged subview of the stack view.
+Under the hood, the `rows` method creates a UIStackView<sup>[1](#footnote1)</sup>, configures its axis and alignment, and then adds the associated view of each of the given child nodes as an arranged subview of the stack view.
 
 **cols**
 
@@ -111,7 +148,7 @@ let layout = StackLayout.cols(of: [
 ])
 ```
 
-Similarly to the `rows` method, the `cols` method creates and configures a UIStackView under the hood.
+Similarly to the `rows` method, the `cols` method creates and configures a UIStackView<sup>[1](#footnote1)</sup> under the hood.
 
 **spacing**
 
@@ -129,7 +166,7 @@ let layout = StackLayout.rows(of: [
 ])
 ```
 
-Under the hood, the `spacing` method creates a UIView and activates a width or height constraint on it.
+Under the hood, the `spacing` method creates a UIView<sup>[1](#footnote1)</sup> and activates a width or height constraint on it.
 
 **inset**
 
@@ -189,3 +226,7 @@ phlippieb, phlippie.bosman@gmail.com
 ## License
 
 PHBStackLayout is available under the MIT license. See the LICENSE file for more info.
+
+## Footnotes
+
+<a name="footnote1">1</a>: This framework actually uses subclasses of UIView and UIStackView; see [isUserInteractionEnabled vs hitTest](https://github.com/phlippieb/PHBStackLayout#isuserinteractionenabled-vs-hittest)
