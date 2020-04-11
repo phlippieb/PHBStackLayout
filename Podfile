@@ -1,10 +1,12 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'PHBStackLayoutExample' do
-  # Comment the next line if you don't want to use dynamic frameworks
+target 'PHBStackLayout' do
   use_frameworks!
+  pod 'PHBNonInteractableViews'
+end
 
-  # Pods for PHBStackLayout
+target 'PHBStackLayoutExample' do
+  use_frameworks!
   pod 'PHBStackLayout', :path => '.'
 end

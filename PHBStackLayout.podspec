@@ -12,4 +12,5 @@ UIStackView allows developers to build auto-layout UIs without needing to set up
   s.ios.deployment_target = '10.0'
   s.swift_version = '5.0'
   s.source_files = 'PHBStackLayout/Source/**/*.swift'
+  s.dependency 'PHBNonInteractableViews', '~> 1.0'
 end

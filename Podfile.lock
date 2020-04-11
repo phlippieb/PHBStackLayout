@@ -1,16 +1,24 @@
 PODS:
-  - PHBStackLayout (1.0.1)
+  - PHBNonInteractableViews (1.0.0)
+  - PHBStackLayout (1.0.1):
+    - PHBNonInteractableViews (~> 1.0)
 
 DEPENDENCIES:
+  - PHBNonInteractableViews
   - PHBStackLayout (from `.`)
+
+SPEC REPOS:
+  trunk:
+    - PHBNonInteractableViews
 
 EXTERNAL SOURCES:
   PHBStackLayout:
     :path: "."
 
 SPEC CHECKSUMS:
-  PHBStackLayout: cbd29c4971bcfabf275b672d413e6871282898e2
+  PHBNonInteractableViews: 5389335a1f08caff6d44a8b2685ac5e9ca147390
+  PHBStackLayout: 5173c6cd17b192b3fbad6117b1419c4aa4558e00
 
-PODFILE CHECKSUM: 19bb5b7366401b858ea8909c64e6985e8fde8fbf
+PODFILE CHECKSUM: e3c0ceeb8c46be56f1be40d8d5a59bc6db90ef1f
 
 COCOAPODS: 1.9.1
