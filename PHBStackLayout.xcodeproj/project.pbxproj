@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0AB1B8DF24420469000EE5EE /* PHBStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB1B8DD24420469000EE5EE /* PHBStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AB1B90024420576000EE5EE /* NonInteractableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1B8FE24420576000EE5EE /* NonInteractableViews.swift */; };
 		0AB1B90124420576000EE5EE /* StackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1B8FF24420576000EE5EE /* StackLayout.swift */; };
 		0AB1B90924420823000EE5EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1B90824420823000EE5EE /* AppDelegate.swift */; };
 		0AB1B90B24420823000EE5EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB1B90A24420823000EE5EE /* SceneDelegate.swift */; };
@@ -24,7 +23,6 @@
 		0AB1B8DA24420469000EE5EE /* PHBStackLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PHBStackLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB1B8DD24420469000EE5EE /* PHBStackLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHBStackLayout.h; sourceTree = "<group>"; };
 		0AB1B8DE24420469000EE5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0AB1B8FE24420576000EE5EE /* NonInteractableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonInteractableViews.swift; sourceTree = "<group>"; };
 		0AB1B8FF24420576000EE5EE /* StackLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackLayout.swift; sourceTree = "<group>"; };
 		0AB1B90624420823000EE5EE /* PHBStackLayoutExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHBStackLayoutExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB1B90824420823000EE5EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 		0AB1B8FD24420519000EE5EE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0AB1B8FE24420576000EE5EE /* NonInteractableViews.swift */,
 				0AB1B8FF24420576000EE5EE /* StackLayout.swift */,
 			);
 			path = Source;
@@ -315,7 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AB1B90124420576000EE5EE /* StackLayout.swift in Sources */,
-				0AB1B90024420576000EE5EE /* NonInteractableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
