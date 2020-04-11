@@ -1,0 +1,16 @@
+PODS:
+  - PHBStackLayout (1.0.1)
+
+DEPENDENCIES:
+  - PHBStackLayout (from `.`)
+
+EXTERNAL SOURCES:
+  PHBStackLayout:
+    :path: "."
+
+SPEC CHECKSUMS:
+  PHBStackLayout: cbd29c4971bcfabf275b672d413e6871282898e2
+
+PODFILE CHECKSUM: 19bb5b7366401b858ea8909c64e6985e8fde8fbf
+
+COCOAPODS: 1.9.1

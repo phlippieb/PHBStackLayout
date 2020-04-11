@@ -5,6 +5,8 @@
 //  Created by Phlippie Bosman on 2019/08/09.
 //
 
+import UIKit
+
 /// This type provides methods for creating a UIStackView-based layout of views.
 /// The layout is built up as a tree, starting from a root node, where each node can branch out to more nodes, or contain a view.
 /// Each node has an associated view, which is used to build up the concrete layout.
